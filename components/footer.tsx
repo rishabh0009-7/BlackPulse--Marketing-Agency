@@ -45,9 +45,9 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative py-20 border-t border-gray-800">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-12">
+    <footer className="relative py-12 sm:py-16 md:py-20 border-t border-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-12">
           {/* Brand Section */}
           <motion.div
             className="lg:col-span-1"
@@ -64,7 +64,7 @@ export function Footer() {
                   className="w-8 h-8 object-contain filter brightness-0"
                 />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                 BlackPulse
               </span>
             </div>

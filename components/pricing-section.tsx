@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Check, Star, Zap } from "lucide-react"
 
@@ -57,26 +56,22 @@ const plans = [
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="py-32 relative">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="pricing" className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto">
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              Investment Plans
-            </span>
-          </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">Investment Plans</h2>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Choose the plan that fits your growth ambitions. All plans include our performance guarantee.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
@@ -89,26 +84,26 @@ export function PricingSection() {
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
-                  <div className="bg-white/90 text-black px-4 py-2 rounded-full text-sm font-semibold flex items-center shadow-lg">
+                  <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center shadow-lg">
                     <Star className="w-4 h-4 mr-1" />
                     Most Popular
                   </div>
                 </div>
               )}
 
-              <Card
-                className={`h-full transition-all duration-300 backdrop-blur-sm relative ${
+              <div
+                className={`h-full transition-all duration-300 backdrop-blur-sm relative rounded-2xl border ${
                   plan.popular
-                    ? "bg-gradient-to-br from-gray-800/30 to-gray-900/30 border-gray-500/50 shadow-2xl shadow-gray-500/20 z-10"
-                    : "bg-gradient-to-br from-gray-900/50 to-black/50 border-gray-800 hover:border-gray-500/50 group-hover:shadow-2xl group-hover:shadow-gray-500/20"
+                    ? "bg-gray-900/30 border-orange-500/50 shadow-2xl shadow-orange-500/20 z-10"
+                    : "bg-gray-900/50 border-gray-800 hover:border-gray-600 group-hover:shadow-2xl group-hover:shadow-gray-500/20"
                 }`}
               >
-                <CardContent className="p-8">
+                <div className="p-4 sm:p-6 md:p-8">
                   <div className="text-center mb-8">
                     <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
                     <p className="text-gray-400 text-sm mb-6">{plan.description}</p>
                     <div className="mb-6">
-                      <span className="text-4xl font-bold text-white">${plan.price.toLocaleString()}</span>
+                      <span className="text-3xl sm:text-4xl font-bold text-white">${plan.price.toLocaleString()}</span>
                       <span className="text-gray-400">/month</span>
                     </div>
                   </div>
@@ -125,15 +120,15 @@ export function PricingSection() {
                   <Button
                     className={`w-full ${
                       plan.popular
-                        ? "bg-white/90 hover:bg-white text-black font-semibold"
-                        : "bg-transparent border-2 border-white/70 text-white hover:bg-white/10 hover:border-white"
+                        ? "bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold"
+                        : "bg-transparent border-2 border-gray-600 text-white hover:bg-white hover:text-black hover:border-white"
                     } transition-all duration-300`}
                   >
                     {plan.popular && <Zap className="w-4 h-4 mr-2" />}
                     Get Started
                   </Button>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
