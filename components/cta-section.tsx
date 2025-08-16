@@ -18,7 +18,7 @@ export function CTASection() {
           </h2>
 
           <p className="text-lg sm:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Let's build something extraordinary together. Start your journey to marketing success today.
+            Let&apos;s build something extraordinary together. Start your journey to marketing success today.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">

@@ -2,27 +2,34 @@
 
 import { motion } from "framer-motion"
 import { Star } from "lucide-react"
+import Image from "next/image"
 
 const testimonials = [
   {
     name: "Marcus Rodriguez",
     role: "Marketing Director, GrowthLab Inc",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face",
-    content: "The ROI we achieved with BlackPulse exceeded all expectations. Their strategic approach is unmatched.",
+    image:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face",
+    content:
+      "The ROI we achieved with BlackPulse exceeded all expectations. Their strategic approach is unmatched.",
     rating: 5,
   },
   {
     name: "Emily Watson",
     role: "Founder, EcoVibe",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face",
-    content: "Working with BlackPulse was a game-changer. They helped us scale from startup to market leader.",
+    image:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face",
+    content:
+      "Working with BlackPulse was a game-changer. They helped us scale from startup to market leader.",
     rating: 5,
   },
   {
     name: "David Kim",
     role: "VP Marketing, InnovateCorp",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face",
-    content: "Their data-driven approach and creative execution delivered results beyond our wildest dreams.",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face",
+    content:
+      "Their data-driven approach and creative execution delivered results beyond our wildest dreams.",
     rating: 5,
   },
 ]
@@ -38,9 +45,12 @@ export function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">What Our Clients Say</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
+            What Our Clients Say
+          </h2>
           <p className="text-gray-400 text-lg">
-            Don't just take our word for it. Here's what our clients say about working with us.
+            Don&apos;t just take our word for it. Here&apos;s what our clients say about
+            working with us.
           </p>
         </motion.div>
 
@@ -56,20 +66,29 @@ export function TestimonialsSection() {
             >
               <div className="flex items-center mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                  <Star
+                    key={i}
+                    className="w-4 h-4 text-yellow-400 fill-current"
+                  />
                 ))}
               </div>
 
-              <p className="text-gray-300 mb-6 leading-relaxed">"{testimonial.content}"</p>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                &quot;{testimonial.content}&quot;
+              </p>
 
               <div className="flex items-center">
-                <img
+                <Image
                   src={testimonial.image || "/placeholder.svg"}
-                  alt={testimonial.name}
+                  alt={`Photo of ${testimonial.name}`}
+                  width={48}
+                  height={48}
                   className="w-12 h-12 rounded-full mr-4"
                 />
                 <div>
-                  <h4 className="text-white font-semibold">{testimonial.name}</h4>
+                  <h4 className="text-white font-semibold">
+                    {testimonial.name}
+                  </h4>
                   <p className="text-gray-400 text-sm">{testimonial.role}</p>
                 </div>
               </div>

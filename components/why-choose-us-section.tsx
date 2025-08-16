@@ -70,8 +70,8 @@ export function WhyChooseUsSection() {
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            We're not just another marketing agency. Here's what makes us the strategic partner your business needs to
-            dominate your market.
+            We&apos;re not just another marketing agency. Here&apos;s what makes us the
+            strategic partner your business needs to dominate your market.
           </p>
         </motion.div>
 
@@ -100,7 +100,9 @@ export function WhyChooseUsSection() {
                     <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-orange-300 group-hover:to-orange-500 group-hover:bg-clip-text transition-all duration-300">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-300 leading-relaxed mb-6 text-lg">{feature.description}</p>
+                    <p className="text-gray-300 leading-relaxed mb-6 text-lg">
+                      {feature.description}
+                    </p>
                   </div>
 
                   <div className="space-y-4">

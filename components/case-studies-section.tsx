@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowUpRight, Play } from "lucide-react"
 import { useState } from "react"
+import Image from "next/image"
 
 const caseStudies = [
   {
@@ -65,10 +66,12 @@ export function CaseStudiesSection() {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Case Studies</span>
+            <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              Case Studies
+            </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Real results from real clients. See how we've helped businesses achieve extraordinary growth.
+            Real results from real clients. See how we&apos;ve helped businesses achieve extraordinary growth.
           </p>
         </motion.div>
 
@@ -86,14 +89,20 @@ export function CaseStudiesSection() {
             >
               <Card className="h-full bg-gradient-to-br from-gray-900/50 to-black/50 border-gray-800 hover:border-purple-500/50 transition-all duration-300 backdrop-blur-sm group-hover:shadow-2xl group-hover:shadow-purple-500/20 overflow-hidden">
                 <div className="relative">
-                  <img
+                  <Image
                     src={study.image || "/placeholder.svg"}
                     alt={study.title}
+                    width={600}
+                    height={400}
+                    unoptimized
                     className="w-full h-40 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute top-4 right-4">
-                    <Button size="sm" className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border-0">
+                    <Button
+                      size="sm"
+                      className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border-0"
+                    >
                       <Play className="w-4 h-4" />
                     </Button>
                   </div>
